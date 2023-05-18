@@ -13,7 +13,7 @@
             Ações
           </th>
         </tr>
-        <%= link_to 'Novo Contato', class: 'btn btn-success' %>
+        <%= link_to 'Novo Contato', new_contact_path(), class: 'btn btn-success' %>
       </thead>
       <tbody>
         <% if @contacts.empty? %>
@@ -33,10 +33,10 @@
             <%= c.phone %>
           </td>
           <td>
-            <%= link_to 'Editar', class: 'btn btn-warning' %>
+            <%= link_to 'Editar', edit_contact_path(c), class: 'btn btn-warning' %>
           </td>
           <td>
-            <%= link_to 'Excluir', method: :delete, class: 'btn btn-danger', data: { confirm: 'Tem certeza que deseja excluir?' } %>
+            <%= link_to 'Excluir', c, method: :delete, class: 'btn btn-danger' %>
           </td>
         </tr>
         <% end %>
