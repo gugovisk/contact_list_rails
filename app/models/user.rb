@@ -17,4 +17,6 @@ class User < ApplicationRecord
         self.email.downcase!
       end
   
+    has_many :contacts
+    
   end
